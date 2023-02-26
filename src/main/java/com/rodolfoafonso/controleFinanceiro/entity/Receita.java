@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Setter
 public class Receita{
         @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
         private String descricao;

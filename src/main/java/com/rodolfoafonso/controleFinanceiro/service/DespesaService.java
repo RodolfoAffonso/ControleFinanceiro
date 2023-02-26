@@ -3,7 +3,6 @@ package com.rodolfoafonso.controleFinanceiro.service;
 import com.rodolfoafonso.controleFinanceiro.dto.DespesaDTO;
 import com.rodolfoafonso.controleFinanceiro.entity.Categoria;
 import com.rodolfoafonso.controleFinanceiro.entity.Despesa;
-import com.rodolfoafonso.controleFinanceiro.entity.Receita;
 import com.rodolfoafonso.controleFinanceiro.exceptions.ExistsDescriptionException;
 import com.rodolfoafonso.controleFinanceiro.repository.CategoriaRepository;
 import com.rodolfoafonso.controleFinanceiro.repository.DespesaRepository;
@@ -39,11 +38,13 @@ public class DespesaService {
     public List<DespesaDTO> consulta(String descricao) {
         if (descricao == null) {
             List<Despesa> despesas = despesaRepository.findAll();
-            return despesas.stream().map(despesa -> new DespesaDTO(despesa.getId(), despesa.getDescricao(), despesa.getValor(), despesa.getData(), despesa.getCategoria().toString())).toList();
+            return DespesaDTO.getDespesaDTOS(despesas);
         } else {  List<Despesa> despesas = despesaRepository.findByDescricao(descricao);
-            return despesas.stream().map(despesa -> new DespesaDTO(despesa.getId(), despesa.getDescricao(), despesa.getValor(), despesa.getData(), despesa.getCategoria().toString())).toList();
+            return DespesaDTO.getDespesaDTOS(despesas);
         }
     }
+
+
 
 
     public DespesaDTO detalhar(Long id) {
@@ -90,6 +91,7 @@ public class DespesaService {
 
     public List<DespesaDTO> consultaMes(int ano, int mes) {
         List<Despesa> despesas = despesaRepository.buscaMes(ano,mes);
-        return despesas.stream().map(despesa -> new DespesaDTO(despesa.getId(), despesa.getDescricao(), despesa.getValor(), despesa.getData(), despesa.getCategoria().toString())).toList();
+        return DespesaDTO.getDespesaDTOS(despesas);
     }
+
 }

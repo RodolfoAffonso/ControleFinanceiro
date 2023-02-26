@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -33,4 +34,8 @@ public class ReceitaDTO {
         this.valor = receita.getValor();
         this.data = receita.getData();
     }
+    public static List<ReceitaDTO> getReceitaDTOS(List<Receita> receitas) {
+        return receitas.stream().map(receita -> new ReceitaDTO(receita.getId(), receita.getDescricao(), receita.getValor(), receita.getData())).toList();
+    }
+
 }

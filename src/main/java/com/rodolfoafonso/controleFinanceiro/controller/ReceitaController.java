@@ -1,15 +1,11 @@
 package com.rodolfoafonso.controleFinanceiro.controller;
-
 import com.rodolfoafonso.controleFinanceiro.dto.ReceitaDTO;
-
 import com.rodolfoafonso.controleFinanceiro.entity.Receita;
 import com.rodolfoafonso.controleFinanceiro.service.ReceitaService;
 
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
+
 @NoArgsConstructor
 @Getter
 public class DespesaDTO {
@@ -34,5 +36,8 @@ public class DespesaDTO {
         this.valor = despesa.getValor();
         this.data = despesa.getData();
         this.categoria = despesa.getCategoria().toString();
+    }
+    public static List<DespesaDTO> getDespesaDTOS(List<Despesa> despesas) {
+        return despesas.stream().map(despesa -> new DespesaDTO(despesa.getId(), despesa.getDescricao(), despesa.getValor(), despesa.getData(), despesa.getCategoria().toString())).toList();
     }
 }

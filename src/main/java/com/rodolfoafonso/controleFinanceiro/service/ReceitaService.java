@@ -5,11 +5,8 @@ import com.rodolfoafonso.controleFinanceiro.entity.Receita;
 import com.rodolfoafonso.controleFinanceiro.exceptions.ExistsDescriptionException;
 import com.rodolfoafonso.controleFinanceiro.repository.ReceitaRepository;
 
-import java.time.LocalDate;
 import java.util.List;
-
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -33,10 +30,10 @@ public class ReceitaService {
     public List<ReceitaDTO> consulta(String descricao) {
         if (descricao == null) {
             List<Receita> receitas = receitaRepository.findAll();
-            return receitas.stream().map(receita -> new ReceitaDTO(receita.getId(), receita.getDescricao(), receita.getValor(), receita.getData())).toList();
+            return ReceitaDTO.getReceitaDTOS(receitas);
         }else {
             List<Receita> receitas = receitaRepository.findByDescricao(descricao);
-            return receitas.stream().map(receita -> new ReceitaDTO(receita.getId(), receita.getDescricao(), receita.getValor(), receita.getData())).toList();
+            return ReceitaDTO.getReceitaDTOS(receitas);
         }
         }
 
@@ -65,6 +62,8 @@ public class ReceitaService {
 
     public List<ReceitaDTO> consultaMes(int ano ,int mes) {
         List<Receita> receitas = receitaRepository.buscaMes(ano,mes);
-        return receitas.stream().map(receita -> new ReceitaDTO(receita.getId(), receita.getDescricao(), receita.getValor(), receita.getData())).toList();
+        return ReceitaDTO.getReceitaDTOS(receitas);
     }
+
+
 }
