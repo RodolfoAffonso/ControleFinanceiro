@@ -5,18 +5,19 @@ import com.rodolfoafonso.controleFinanceiro.dto.DespesaDTO;
 import com.rodolfoafonso.controleFinanceiro.entity.Despesa;
 
 import com.rodolfoafonso.controleFinanceiro.service.DespesaService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
-
+@AllArgsConstructor
 @RestController
 @RequestMapping("/despesas")
 public class DespesaController {
 
-    @Autowired
+
     DespesaService despesaService;
 
     @PostMapping

@@ -1,13 +1,18 @@
 package com.rodolfoafonso.controleFinanceiro.dto;
 
-import java.math.BigDecimal;
+import lombok.AllArgsConstructor;
 
+import java.math.BigDecimal;
+import java.util.List;
+@AllArgsConstructor
 public class ResumoDTO {
 
 
-    private Long valorTotalReceita;
-    private Long valorTotalDespesa;
+    private BigDecimal valorTotalReceita;
+    private BigDecimal valorTotalDespesa;
 
-    private Long saldoMes;
+    private BigDecimal ResumodoMes;
+
+    private List<ResumoCategoriaDTO> categorias ;
 
 }
