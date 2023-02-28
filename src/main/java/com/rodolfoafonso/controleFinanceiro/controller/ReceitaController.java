@@ -5,17 +5,19 @@ import com.rodolfoafonso.controleFinanceiro.service.ReceitaService;
 
 
 import java.util.List;
+
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/receitas")
-
 public class ReceitaController {
-    @Autowired
+
     ReceitaService receitaService;
 
     @PostMapping
@@ -53,7 +55,7 @@ public class ReceitaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> removerReceita(@PathVariable Long id) {
+    public ResponseEntity<ReceitaDTO> removerReceita(@PathVariable Long id) {
         receitaService.remove(id);
         return ResponseEntity.ok().build();
     }

@@ -3,10 +3,11 @@ package com.rodolfoafonso.controleFinanceiro.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@NoArgsConstructor
+@Setter
 @Getter
 public class ResumoCategoriaDTO  {
     private BigDecimal valor;

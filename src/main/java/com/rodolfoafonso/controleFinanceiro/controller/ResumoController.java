@@ -1,6 +1,5 @@
 package com.rodolfoafonso.controleFinanceiro.controller;
 
-import com.rodolfoafonso.controleFinanceiro.dto.ReceitaDTO;
 import com.rodolfoafonso.controleFinanceiro.dto.ResumoDTO;
 import com.rodolfoafonso.controleFinanceiro.service.ResumoService;
 import lombok.AllArgsConstructor;

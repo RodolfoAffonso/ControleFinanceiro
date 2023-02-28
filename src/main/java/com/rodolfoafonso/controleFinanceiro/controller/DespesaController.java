@@ -3,10 +3,8 @@ package com.rodolfoafonso.controleFinanceiro.controller;
 import com.rodolfoafonso.controleFinanceiro.dto.DespesaDTO;
 
 import com.rodolfoafonso.controleFinanceiro.entity.Despesa;
-
 import com.rodolfoafonso.controleFinanceiro.service.DespesaService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,7 +52,7 @@ public class DespesaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> removerDespesa(@PathVariable Long id) {
+    public ResponseEntity<DespesaDTO> removerDespesa(@PathVariable Long id) {
         despesaService.remove(id);
         return ResponseEntity.ok().build();
     }

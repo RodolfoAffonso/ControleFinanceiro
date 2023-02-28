@@ -6,12 +6,15 @@ import com.rodolfoafonso.controleFinanceiro.exceptions.ExistsDescriptionExceptio
 import com.rodolfoafonso.controleFinanceiro.repository.ReceitaRepository;
 
 import java.util.List;
+
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
 @AllArgsConstructor
+@Service
 public class ReceitaService {
+
 
     ReceitaRepository receitaRepository;
 

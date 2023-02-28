@@ -6,8 +6,9 @@ import com.rodolfoafonso.controleFinanceiro.entity.Despesa;
 import com.rodolfoafonso.controleFinanceiro.exceptions.ExistsDescriptionException;
 import com.rodolfoafonso.controleFinanceiro.repository.CategoriaRepository;
 import com.rodolfoafonso.controleFinanceiro.repository.DespesaRepository;
-import lombok.AllArgsConstructor;
 
+
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +18,8 @@ import java.util.Optional;
 @Service
 public class DespesaService {
 
-    DespesaRepository despesaRepository;
 
+    DespesaRepository despesaRepository;
     CategoriaRepository categoriaRepository;
 
     public void incluir(DespesaDTO despesaDTO) {
@@ -79,7 +80,7 @@ public class DespesaService {
         else
             categoriaStr = despesaDTO.getCategoria();
 
-        Optional<Categoria> optionalCategoria = this.categoriaRepository.findByCategoria(categoriaStr);
+        Optional<Categoria> optionalCategoria = this.categoriaRepository.findByDescricao(categoriaStr);
 
         return optionalCategoria.orElseThrow(() -> new RuntimeException("Categoria invalida "));
 

@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface CategoriaRepository extends JpaRepository<Categoria ,Long> {
 
 
-    Optional<Categoria> findByCategoria(String categoria);
+    Optional<Categoria> findByDescricao(String categoria);
 }
