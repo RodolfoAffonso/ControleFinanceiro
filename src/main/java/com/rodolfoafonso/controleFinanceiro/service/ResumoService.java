@@ -15,8 +15,8 @@ import java.util.List;
 @Service
 public class ResumoService {
 
-    ReceitaRepository receitaRepository ;
-    DespesaRepository despesaRepository ;
+    private final ReceitaRepository receitaRepository ;
+    private final DespesaRepository despesaRepository ;
 
 
     public ResumoDTO resumoDoMes(int ano, int mes) {

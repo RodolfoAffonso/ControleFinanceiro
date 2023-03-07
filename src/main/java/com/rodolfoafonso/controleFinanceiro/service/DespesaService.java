@@ -19,8 +19,8 @@ import java.util.Optional;
 public class DespesaService {
 
 
-    DespesaRepository despesaRepository;
-    CategoriaRepository categoriaRepository;
+    private final  DespesaRepository despesaRepository;
+    private final CategoriaRepository categoriaRepository;
 
     public void incluir(DespesaDTO despesaDTO) {
 

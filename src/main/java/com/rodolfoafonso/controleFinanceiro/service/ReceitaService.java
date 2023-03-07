@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class ReceitaService {
 
 
-    ReceitaRepository receitaRepository;
+    private final ReceitaRepository receitaRepository;
 
 
     public void incluir(ReceitaDTO receitaDTO) {

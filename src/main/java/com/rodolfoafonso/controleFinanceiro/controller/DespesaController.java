@@ -16,7 +16,7 @@ import java.util.List;
 public class DespesaController {
 
 
-    DespesaService despesaService;
+    private final DespesaService despesaService;
 
     @PostMapping
     public ResponseEntity<DespesaDTO> cadastrar(@RequestBody DespesaDTO despesa) {

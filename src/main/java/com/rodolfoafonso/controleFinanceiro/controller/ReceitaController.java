@@ -18,7 +18,7 @@ import javax.transaction.Transactional;
 @RequestMapping("/receitas")
 public class ReceitaController {
 
-    ReceitaService receitaService;
+    private final ReceitaService receitaService;
 
     @PostMapping
     public ResponseEntity<ReceitaDTO> cadastrar(@RequestBody ReceitaDTO receita) {

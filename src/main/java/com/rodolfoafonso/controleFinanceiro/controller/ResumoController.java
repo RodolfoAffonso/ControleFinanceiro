@@ -16,7 +16,7 @@ import java.util.List;
 public class ResumoController {
 
 
-    ResumoService resumoService ;
+    private final ResumoService resumoService ;
 
     @GetMapping("/{ano}/{mes}")
     public ResumoDTO buscarReceitaMes(@PathVariable int ano, @PathVariable int mes){
