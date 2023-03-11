@@ -59,11 +59,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.headers().frameOptions().disable();
         http
                 .cors().and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login").permitAll()
+                .antMatchers("/login*").permitAll()
+                .antMatchers("/cadastrar").permitAll()
                 .antMatchers("/h2-ui/**").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic(Customizer.withDefaults())

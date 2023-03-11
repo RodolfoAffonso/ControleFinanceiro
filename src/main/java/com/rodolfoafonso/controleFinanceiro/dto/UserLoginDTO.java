@@ -3,7 +3,7 @@ package com.rodolfoafonso.controleFinanceiro.dto;
 import lombok.Getter;
 
 @Getter
-public class LoginDTO {
+public class UserLoginDTO {
 
     private String user ;
     private String password ;

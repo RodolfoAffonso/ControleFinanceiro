@@ -1,6 +1,6 @@
 package com.rodolfoafonso.controleFinanceiro.controller;
 
-import com.rodolfoafonso.controleFinanceiro.dto.LoginDTO;
+import com.rodolfoafonso.controleFinanceiro.dto.UserLoginDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,9 +27,9 @@ public class LoginController {
     private final JwtEncoder jwtEncoder;
 
     @PostMapping
-    public ResponseEntity login(@RequestBody LoginDTO login){
+    public ResponseEntity login(@RequestBody UserLoginDTO login){
         Authentication authenticate = authenticationManager
-                .authenticate(
+                 .authenticate(
                         new UsernamePasswordAuthenticationToken(
                                 login.getUser(), login.getPassword()
                         )
